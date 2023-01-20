@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  apache:
+    image: 'webdevops/php-apache-dev:8.0'
+    environment:
+      WEB_DOCUMENT_ROOT: '/var/www/'
+      PHP_POST_MAX_SIZE: 256M
+      PHP_UPLOAD_MAX_FILESIZE: 256M
+      PHP_DISPLAY_ERRORS: 1
+
+      # only used when image is php-apache-dev:8.0
+      # PHP_DEBUGGER: 'xdebug'
+      # XDEBUG_MODE: 'profile'
+      # XDEBUG_ENABLE: true
+      # XDEBUG_REMOTE_ENABLE: true
+      # XDEBUG_REMOTE_AUTOSTART: true
+      # XDEBUG_REMOTE_CONNECT_BACK: true
+      # XDEBUG_REMOTE_PORT: 9000
+      # XDEBUG_IDEKEY: 'VSCODE'
+      # XDEBUG_PROFILER_ENABLE_TRIGGER: 0
+      # XDEBUG_START_WITH_REQUEST: true
+      # XDEBUG_PROFILER_ENABLE: true
+      # XDEBUG_PROFILER_OUTPUT_DIR: '/var/www/xdebug'
+
+    # when starting apache we always want to have php and mysql started too.
+    depends_on:
+      - mysql
+    volumes:
+      - './:/var/www'
+    ports:
+      - '80:80'
+      - '443:443'
+
+  mysql:
+    image: "mariadb:10.7"
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_INITDB_SKIP_TZINFO: 1
+      MARIADB_DATABASE: wp_graphql_1837
+    ports:
+      - '3306:3306'
