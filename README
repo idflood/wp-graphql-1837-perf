@@ -1,0 +1,16 @@
+# Wordpress + WP-Graphql test
+
+Project related to issue https://github.com/wp-graphql/wp-graphql/issues/1873
+
+Start server with `docker compose up -d`
+
+Credentials:
+url: http://local.test/wp-admin
+user: test
+pass: test
+
+Import `wp_graphql_1837.sql.gz` in myslq using sequel pro, or another client/solution
+
+mysql host: 127.0.0.1
+mysql user: root
+mysql password: root
