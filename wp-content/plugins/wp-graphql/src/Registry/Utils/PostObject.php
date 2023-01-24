@@ -189,7 +189,7 @@ class PostObject {
 						[
 							'taxonomies' => [
 								'type'        => [ 'list_of' => 'TaxonomyEnum' ],
-								'description' => __( 'The Taxonomy to filter terms by', 'wp-graphql' ),
+								// 'description' => __( 'The Taxonomy to filter terms by', 'wp-graphql' ),
 							],
 						]
 					),
@@ -353,8 +353,8 @@ class PostObject {
 				'type'              => [
 					'non_null' => 'Int',
 				],
-				'deprecationReason' => __( 'Deprecated in favor of the databaseId field', 'wp-graphql' ),
-				'description'       => __( 'The id field matches the WP_Post->ID field.', 'wp-graphql' ),
+				// 'deprecationReason' => __( 'Deprecated in favor of the databaseId field', 'wp-graphql' ),
+				// 'description'       => __( 'The id field matches the WP_Post->ID field.', 'wp-graphql' ),
 				'resolve'           => function ( Post $post, $args, $context, $info ) {
 					return absint( $post->ID );
 				},
@@ -364,24 +364,24 @@ class PostObject {
 		if ( 'page' === $post_type_object->name ) {
 			$fields['isFrontPage'] = [
 				'type'        => [ 'non_null' => 'Bool' ],
-				'description' => __( 'Whether this page is set to the static front page.', 'wp-graphql' ),
+				// 'description' => __( 'Whether this page is set to the static front page.', 'wp-graphql' ),
 			];
 
 			$fields['isPostsPage'] = [
 				'type'        => [ 'non_null' => 'Bool' ],
-				'description' => __( 'Whether this page is set to the blog posts page.', 'wp-graphql' ),
+				// 'description' => __( 'Whether this page is set to the blog posts page.', 'wp-graphql' ),
 			];
 
 			$fields['isPrivacyPage'] = [
 				'type'        => [ 'non_null' => 'Bool' ],
-				'description' => __( 'Whether this page is set to the privacy page.', 'wp-graphql' ),
+				// 'description' => __( 'Whether this page is set to the privacy page.', 'wp-graphql' ),
 			];
 		}
 
 		if ( 'post' === $post_type_object->name ) {
 			$fields['isSticky'] = [
 				'type'        => [ 'non_null' => 'Bool' ],
-				'description' => __( 'Whether this page is sticky', 'wp-graphql' ),
+				// 'description' => __( 'Whether this page is sticky', 'wp-graphql' ),
 			];
 		}
 
@@ -428,11 +428,11 @@ class PostObject {
 			[
 				'caption'      => [
 					'type'        => 'String',
-					'description' => __( 'The caption for the resource', 'wp-graphql' ),
+					// 'description' => __( 'The caption for the resource', 'wp-graphql' ),
 					'args'        => [
 						'format' => [
 							'type'        => 'PostObjectFieldFormatEnum',
-							'description' => __( 'Format of the field output', 'wp-graphql' ),
+							// 'description' => __( 'Format of the field output', 'wp-graphql' ),
 						],
 					],
 					'resolve'     => function ( $source, $args ) {
@@ -447,17 +447,17 @@ class PostObject {
 				],
 				'altText'      => [
 					'type'        => 'String',
-					'description' => __( 'Alternative text to display when resource is not displayed', 'wp-graphql' ),
+					// 'description' => __( 'Alternative text to display when resource is not displayed', 'wp-graphql' ),
 				],
 				'srcSet'       => [
 					'type'        => 'string',
 					'args'        => [
 						'size' => [
 							'type'        => 'MediaItemSizeEnum',
-							'description' => __( 'Size of the MediaItem to calculate srcSet with', 'wp-graphql' ),
+							// 'description' => __( 'Size of the MediaItem to calculate srcSet with', 'wp-graphql' ),
 						],
 					],
-					'description' => __( 'The srcset attribute specifies the URL of the image to use in different situations. It is a comma separated string of urls and their widths.', 'wp-graphql' ),
+					// 'description' => __( 'The srcset attribute specifies the URL of the image to use in different situations. It is a comma separated string of urls and their widths.', 'wp-graphql' ),
 					'resolve'     => function ( $source, $args ) {
 						$size = 'medium';
 						if ( ! empty( $args['size'] ) ) {
@@ -474,10 +474,10 @@ class PostObject {
 					'args'        => [
 						'size' => [
 							'type'        => 'MediaItemSizeEnum',
-							'description' => __( 'Size of the MediaItem to calculate sizes with', 'wp-graphql' ),
+							// 'description' => __( 'Size of the MediaItem to calculate sizes with', 'wp-graphql' ),
 						],
 					],
-					'description' => __( 'The sizes attribute value for an image.', 'wp-graphql' ),
+					// 'description' => __( 'The sizes attribute value for an image.', 'wp-graphql' ),
 					'resolve'     => function ( $source, $args ) {
 						$size = 'medium';
 						if ( ! empty( $args['size'] ) ) {
@@ -500,11 +500,11 @@ class PostObject {
 				],
 				'description'  => [
 					'type'        => 'String',
-					'description' => __( 'Description of the image (stored as post_content)', 'wp-graphql' ),
+					// 'description' => __( 'Description of the image (stored as post_content)', 'wp-graphql' ),
 					'args'        => [
 						'format' => [
 							'type'        => 'PostObjectFieldFormatEnum',
-							'description' => __( 'Format of the field output', 'wp-graphql' ),
+							// 'description' => __( 'Format of the field output', 'wp-graphql' ),
 						],
 					],
 					'resolve'     => function ( $source, $args ) {
@@ -519,19 +519,19 @@ class PostObject {
 				],
 				'mediaItemUrl' => [
 					'type'        => 'String',
-					'description' => __( 'Url of the mediaItem', 'wp-graphql' ),
+					// 'description' => __( 'Url of the mediaItem', 'wp-graphql' ),
 				],
 				'mediaType'    => [
 					'type'        => 'String',
-					'description' => __( 'Type of resource', 'wp-graphql' ),
+					// 'description' => __( 'Type of resource', 'wp-graphql' ),
 				],
 				'sourceUrl'    => [
 					'type'        => 'String',
-					'description' => __( 'Url of the mediaItem', 'wp-graphql' ),
+					// 'description' => __( 'Url of the mediaItem', 'wp-graphql' ),
 					'args'        => [
 						'size' => [
 							'type'        => 'MediaItemSizeEnum',
-							'description' => __( 'Size of the MediaItem to return', 'wp-graphql' ),
+							// 'description' => __( 'Size of the MediaItem to return', 'wp-graphql' ),
 						],
 					],
 					'resolve'     => function ( $image, $args, $context, $info ) {
@@ -546,11 +546,11 @@ class PostObject {
 				],
 				'fileSize'     => [
 					'type'        => 'Int',
-					'description' => __( 'The filesize in bytes of the resource', 'wp-graphql' ),
+					// 'description' => __( 'The filesize in bytes of the resource', 'wp-graphql' ),
 					'args'        => [
 						'size' => [
 							'type'        => 'MediaItemSizeEnum',
-							'description' => __( 'Size of the MediaItem to return', 'wp-graphql' ),
+							// 'description' => __( 'Size of the MediaItem to return', 'wp-graphql' ),
 						],
 					],
 					'resolve'     => function ( $image, $args, $context, $info ) {
@@ -572,11 +572,11 @@ class PostObject {
 				],
 				'mimeType'     => [
 					'type'        => 'String',
-					'description' => __( 'The mime type of the mediaItem', 'wp-graphql' ),
+					// 'description' => __( 'The mime type of the mediaItem', 'wp-graphql' ),
 				],
 				'mediaDetails' => [
 					'type'        => 'MediaDetails',
-					'description' => __( 'Details about the mediaItem', 'wp-graphql' ),
+					// 'description' => __( 'Details about the mediaItem', 'wp-graphql' ),
 				],
 			]
 		);

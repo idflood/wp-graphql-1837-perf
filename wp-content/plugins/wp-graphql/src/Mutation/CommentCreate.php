@@ -36,44 +36,44 @@ class CommentCreate {
 		return [
 			'approved'    => [
 				'type'              => 'String',
-				'description'       => __( 'The approval status of the comment.', 'wp-graphql' ),
-				'deprecationReason' => __( 'Deprecated in favor of the status field', 'wp-graphql' ),
+				// 'description'       => __( 'The approval status of the comment.', 'wp-graphql' ),
+				// 'deprecationReason' => __( 'Deprecated in favor of the status field', 'wp-graphql' ),
 			],
 			'author'      => [
 				'type'        => 'String',
-				'description' => __( 'The name of the comment\'s author.', 'wp-graphql' ),
+				// 'description' => __( 'The name of the comment\'s author.', 'wp-graphql' ),
 			],
 			'authorEmail' => [
 				'type'        => 'String',
-				'description' => __( 'The email of the comment\'s author.', 'wp-graphql' ),
+				// 'description' => __( 'The email of the comment\'s author.', 'wp-graphql' ),
 			],
 			'authorUrl'   => [
 				'type'        => 'String',
-				'description' => __( 'The url of the comment\'s author.', 'wp-graphql' ),
+				// 'description' => __( 'The url of the comment\'s author.', 'wp-graphql' ),
 			],
 			'commentOn'   => [
 				'type'        => 'Int',
-				'description' => __( 'The database ID of the post object the comment belongs to.', 'wp-graphql' ),
+				// 'description' => __( 'The database ID of the post object the comment belongs to.', 'wp-graphql' ),
 			],
 			'content'     => [
 				'type'        => 'String',
-				'description' => __( 'Content of the comment.', 'wp-graphql' ),
+				// 'description' => __( 'Content of the comment.', 'wp-graphql' ),
 			],
 			'date'        => [
 				'type'        => 'String',
-				'description' => __( 'The date of the object. Preferable to enter as year/month/day ( e.g. 01/31/2017 ) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17 ', 'wp-graphql' ),
+				// 'description' => __( 'The date of the object. Preferable to enter as year/month/day ( e.g. 01/31/2017 ) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17 ', 'wp-graphql' ),
 			],
 			'parent'      => [
 				'type'        => 'ID',
-				'description' => __( 'Parent comment ID of current comment.', 'wp-graphql' ),
+				// 'description' => __( 'Parent comment ID of current comment.', 'wp-graphql' ),
 			],
 			'status'      => [
 				'type'        => 'CommentStatusEnum',
-				'description' => __( 'The approval status of the comment', 'wp-graphql' ),
+				// 'description' => __( 'The approval status of the comment', 'wp-graphql' ),
 			],
 			'type'        => [
 				'type'        => 'String',
-				'description' => __( 'Type of comment.', 'wp-graphql' ),
+				// 'description' => __( 'Type of comment.', 'wp-graphql' ),
 			],
 		];
 	}
@@ -87,7 +87,7 @@ class CommentCreate {
 		return [
 			'comment' => [
 				'type'        => 'Comment',
-				'description' => __( 'The comment that was created', 'wp-graphql' ),
+				// 'description' => __( 'The comment that was created', 'wp-graphql' ),
 				'resolve'     => function ( $payload, $args, AppContext $context, ResolveInfo $info ) {
 					if ( ! isset( $payload['id'] ) || ! absint( $payload['id'] ) ) {
 						return null;
@@ -111,7 +111,7 @@ class CommentCreate {
 			 */
 			'success' => [
 				'type'        => 'Boolean',
-				'description' => __( 'Whether the mutation succeeded. If the comment is not approved, the server will not return the comment to a non authenticated user, but a success message can be returned if the create succeeded, and the client can optimistically add the comment to the client cache', 'wp-graphql' ),
+				// 'description' => __( 'Whether the mutation succeeded. If the comment is not approved, the server will not return the comment to a non authenticated user, but a success message can be returned if the create succeeded, and the client can optimistically add the comment to the client cache', 'wp-graphql' ),
 			],
 		];
 	}

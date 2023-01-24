@@ -33,7 +33,7 @@ class SettingGroup {
 		register_graphql_object_type(
 			ucfirst( $group_name ) . 'Settings',
 			[
-				'description' => sprintf( __( 'The %s setting type', 'wp-graphql' ), $group_name ),
+				// 'description' => sprintf( __( 'The %s setting type', 'wp-graphql' ), $group_name ),
 				'fields'      => $fields,
 			]
 		);
@@ -88,7 +88,7 @@ class SettingGroup {
 					 */
 					$fields[ $field_key ] = [
 						'type'        => $type_registry->get_type( $setting_field['type'] ),
-						'description' => isset( $setting_field['description'] ) && ! empty( $setting_field['description'] ) ? $setting_field['description'] : sprintf( __( 'The %s Settings Group', 'wp-graphql' ), $setting_field['type'] ),
+						// 'description' => isset( $setting_field['description'] ) && ! empty( $setting_field['description'] ) ? $setting_field['description'] : sprintf( __( 'The %s Settings Group', 'wp-graphql' ), $setting_field['type'] ),
 						'resolve'     => function ( $root, array $args, $context, $info ) use ( $setting_field ) {
 
 							/**

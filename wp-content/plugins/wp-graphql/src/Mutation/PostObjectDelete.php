@@ -49,7 +49,7 @@ class PostObjectDelete {
 			],
 			'forceDelete' => [
 				'type'        => 'Boolean',
-				'description' => __( 'Whether the object should be force deleted instead of being moved to the trash', 'wp-graphql' ),
+				// 'description' => __( 'Whether the object should be force deleted instead of being moved to the trash', 'wp-graphql' ),
 			],
 		];
 	}
@@ -65,7 +65,7 @@ class PostObjectDelete {
 		return [
 			'deletedId'                            => [
 				'type'        => 'ID',
-				'description' => __( 'The ID of the deleted object', 'wp-graphql' ),
+				// 'description' => __( 'The ID of the deleted object', 'wp-graphql' ),
 				'resolve'     => function ( $payload ) {
 					/** @var Post $deleted */
 					$deleted = $payload['postObject'];
@@ -75,7 +75,7 @@ class PostObjectDelete {
 			],
 			$post_type_object->graphql_single_name => [
 				'type'        => $post_type_object->graphql_single_name,
-				'description' => __( 'The object before it was deleted', 'wp-graphql' ),
+				// 'description' => __( 'The object before it was deleted', 'wp-graphql' ),
 				'resolve'     => function ( $payload ) {
 					/** @var Post $deleted */
 					$deleted = $payload['postObject'];

@@ -17,15 +17,15 @@ class NodeWithExcerpt {
 			'NodeWithExcerpt',
 			[
 				'interfaces'  => [ 'Node' ],
-				'description' => __( 'A node that can have an excerpt', 'wp-graphql' ),
+				// 'description' => __( 'A node that can have an excerpt', 'wp-graphql' ),
 				'fields'      => [
 					'excerpt' => [
 						'type'        => 'String',
-						'description' => __( 'The excerpt of the post.', 'wp-graphql' ),
+						// 'description' => __( 'The excerpt of the post.', 'wp-graphql' ),
 						'args'        => [
 							'format' => [
 								'type'        => 'PostObjectFieldFormatEnum',
-								'description' => __( 'Format of the field output', 'wp-graphql' ),
+								// 'description' => __( 'Format of the field output', 'wp-graphql' ),
 							],
 						],
 						'resolve'     => function ( $source, $args ) {

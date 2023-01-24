@@ -153,7 +153,7 @@ class WPMutationType {
 		$input_fields = [
 			'clientMutationId' => [
 				'type'        => 'String',
-				'description' => __( 'This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions.', 'wp-graphql' ),
+				// 'description' => __( 'This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions.', 'wp-graphql' ),
 			],
 		];
 
@@ -171,7 +171,7 @@ class WPMutationType {
 		$output_fields = [
 			'clientMutationId' => [
 				'type'        => 'String',
-				'description' => __( 'If a \'clientMutationId\' input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.', 'wp-graphql' ),
+				// 'description' => __( 'If a \'clientMutationId\' input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.', 'wp-graphql' ),
 			],
 		];
 
@@ -263,7 +263,7 @@ class WPMutationType {
 		$this->type_registry->register_input_type(
 			$input_name,
 			[
-				'description'       => sprintf( __( 'Input for the %1$s mutation.', 'wp-graphql' ), $this->mutation_name ),
+				// 'description'       => sprintf( __( 'Input for the %1$s mutation.', 'wp-graphql' ), $this->mutation_name ),
 				'fields'            => $this->input_fields,
 				'deprecationReason' => ! empty( $this->config['deprecationReason'] ) ? $this->config['deprecationReason'] : null,
 			]
@@ -280,7 +280,7 @@ class WPMutationType {
 		$this->type_registry->register_object_type(
 			$object_name,
 			[
-				'description'       => sprintf( __( 'The payload for the %s mutation.', 'wp-graphql' ), $this->mutation_name ),
+				// 'description'       => sprintf( __( 'The payload for the %s mutation.', 'wp-graphql' ), $this->mutation_name ),
 				'fields'            => $this->output_fields,
 				'deprecationReason' => ! empty( $this->config['deprecationReason'] ) ? $this->config['deprecationReason'] : null,
 			]
@@ -300,7 +300,7 @@ class WPMutationType {
 					'args'        => [
 						'input' => [
 							'type'              => [ 'non_null' => $this->mutation_name . 'Input' ],
-							'description'       => sprintf( __( 'Input for the %s mutation', 'wp-graphql' ), $this->mutation_name ),
+							// 'description'       => sprintf( __( 'Input for the %s mutation', 'wp-graphql' ), $this->mutation_name ),
 							'deprecationReason' => ! empty( $this->config['deprecationReason'] ) ? $this->config['deprecationReason'] : null,
 						],
 					],

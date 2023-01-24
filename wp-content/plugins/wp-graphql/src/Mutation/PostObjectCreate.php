@@ -46,58 +46,58 @@ class PostObjectCreate {
 		$fields = [
 			'date'      => [
 				'type'        => 'String',
-				'description' => __( 'The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17 ', 'wp-graphql' ),
+				// 'description' => __( 'The date of the object. Preferable to enter as year/month/day (e.g. 01/31/2017) as it will rearrange date as fit if it is not specified. Incomplete dates may have unintended results for example, "2017" as the input will use current date with timestamp 20:17 ', 'wp-graphql' ),
 			],
 			'menuOrder' => [
 				'type'        => 'Int',
-				'description' => __( 'A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types.', 'wp-graphql' ),
+				// 'description' => __( 'A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types.', 'wp-graphql' ),
 			],
 			'password'  => [
 				'type'        => 'String',
-				'description' => __( 'The password used to protect the content of the object', 'wp-graphql' ),
+				// 'description' => __( 'The password used to protect the content of the object', 'wp-graphql' ),
 			],
 			'slug'      => [
 				'type'        => 'String',
-				'description' => __( 'The slug of the object', 'wp-graphql' ),
+				// 'description' => __( 'The slug of the object', 'wp-graphql' ),
 			],
 			'status'    => [
 				'type'        => 'PostStatusEnum',
-				'description' => __( 'The status of the object', 'wp-graphql' ),
+				// 'description' => __( 'The status of the object', 'wp-graphql' ),
 			],
 		];
 
 		if ( post_type_supports( $post_type_object->name, 'author' ) ) {
 			$fields['authorId'] = [
 				'type'        => 'ID',
-				'description' => __( 'The userId to assign as the author of the object', 'wp-graphql' ),
+				// 'description' => __( 'The userId to assign as the author of the object', 'wp-graphql' ),
 			];
 		}
 
 		if ( post_type_supports( $post_type_object->name, 'comments' ) ) {
 			$fields['commentStatus'] = [
 				'type'        => 'String',
-				'description' => __( 'The comment status for the object', 'wp-graphql' ),
+				// 'description' => __( 'The comment status for the object', 'wp-graphql' ),
 			];
 		}
 
 		if ( post_type_supports( $post_type_object->name, 'editor' ) ) {
 			$fields['content'] = [
 				'type'        => 'String',
-				'description' => __( 'The content of the object', 'wp-graphql' ),
+				// 'description' => __( 'The content of the object', 'wp-graphql' ),
 			];
 		}
 
 		if ( post_type_supports( $post_type_object->name, 'excerpt' ) ) {
 			$fields['excerpt'] = [
 				'type'        => 'String',
-				'description' => __( 'The excerpt of the object', 'wp-graphql' ),
+				// 'description' => __( 'The excerpt of the object', 'wp-graphql' ),
 			];
 		}
 
 		if ( post_type_supports( $post_type_object->name, 'title' ) ) {
 			$fields['title'] = [
 				'type'        => 'String',
-				'description' => __( 'The title of the object', 'wp-graphql' ),
+				// 'description' => __( 'The title of the object', 'wp-graphql' ),
 			];
 		}
 
@@ -107,19 +107,19 @@ class PostObjectCreate {
 				'type'        => [
 					'list_of' => 'String',
 				],
-				'description' => __( 'URLs that have been pinged.', 'wp-graphql' ),
+				// 'description' => __( 'URLs that have been pinged.', 'wp-graphql' ),
 			];
 
 			$fields['pingStatus'] = [
 				'type'        => 'String',
-				'description' => __( 'The ping status for the object', 'wp-graphql' ),
+				// 'description' => __( 'The ping status for the object', 'wp-graphql' ),
 			];
 
 			$fields['toPing'] = [
 				'type'        => [
 					'list_of' => 'String',
 				],
-				'description' => __( 'URLs queued to be pinged.', 'wp-graphql' ),
+				// 'description' => __( 'URLs queued to be pinged.', 'wp-graphql' ),
 			];
 		}
 
@@ -129,14 +129,14 @@ class PostObjectCreate {
 		], true ) ) {
 			$fields['parentId'] = [
 				'type'        => 'ID',
-				'description' => __( 'The ID of the parent object', 'wp-graphql' ),
+				// 'description' => __( 'The ID of the parent object', 'wp-graphql' ),
 			];
 		}
 
 		if ( 'attachment' === $post_type_object->name ) {
 			$fields['mimeType'] = [
 				'type'        => 'MimeTypeEnum',
-				'description' => __( 'If the post is an attachment or a media file, this field will carry the corresponding MIME type. This field is equivalent to the value of WP_Post->post_mime_type and the post_mime_type column in the "post_objects" database table.', 'wp-graphql' ),
+				// 'description' => __( 'If the post is an attachment or a media file, this field will carry the corresponding MIME type. This field is equivalent to the value of WP_Post->post_mime_type and the post_mime_type column in the "post_objects" database table.', 'wp-graphql' ),
 			];
 		}
 
@@ -167,7 +167,7 @@ class PostObjectCreate {
 		return [
 			$post_type_object->graphql_single_name => [
 				'type'        => $post_type_object->graphql_single_name,
-				'description' => __( 'The Post object mutation type.', 'wp-graphql' ),
+				// 'description' => __( 'The Post object mutation type.', 'wp-graphql' ),
 				'resolve'     => function ( $payload, $args, AppContext $context, ResolveInfo $info ) {
 
 					if ( empty( $payload['postObjectId'] ) || ! absint( $payload['postObjectId'] ) ) {

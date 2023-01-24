@@ -31,7 +31,7 @@ class MediaItemSizeEnum {
 		 */
 		foreach ( $image_sizes as $image_size ) {
 			$values[ WPEnumType::get_safe_name( $image_size ) ] = [
-				'description' => sprintf( __( 'MediaItem with the %1$s size', 'wp-graphql' ), $image_size ),
+				// 'description' => sprintf( __( 'MediaItem with the %1$s size', 'wp-graphql' ), $image_size ),
 				'value'       => $image_size,
 			];
 		}
@@ -39,7 +39,7 @@ class MediaItemSizeEnum {
 		register_graphql_enum_type(
 			'MediaItemSizeEnum',
 			[
-				'description' => __( 'The size of the media item object.', 'wp-graphql' ),
+				// 'description' => __( 'The size of the media item object.', 'wp-graphql' ),
 				'values'      => $values,
 			]
 		);

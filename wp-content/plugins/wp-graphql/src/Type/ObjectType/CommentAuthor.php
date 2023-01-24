@@ -15,44 +15,44 @@ class CommentAuthor {
 		register_graphql_object_type(
 			'CommentAuthor',
 			[
-				'description'     => __( 'A Comment Author object', 'wp-graphql' ),
+				// 'description'     => __( 'A Comment Author object', 'wp-graphql' ),
 				'interfaces'      => [ 'Node', 'Commenter' ],
 				'model'           => CommentAuthorModel::class,
 				'eagerlyLoadType' => true,
 				'fields'          => [
 					'id'           => [
-						'description' => __( 'The globally unique identifier for the comment author object', 'wp-graphql' ),
+						// 'description' => __( 'The globally unique identifier for the comment author object', 'wp-graphql' ),
 					],
 					'name'         => [
 						'type'        => 'String',
-						'description' => __( 'The name for the comment author.', 'wp-graphql' ),
+						// 'description' => __( 'The name for the comment author.', 'wp-graphql' ),
 					],
 					'email'        => [
 						'type'        => 'String',
-						'description' => __( 'The email for the comment author', 'wp-graphql' ),
+						// 'description' => __( 'The email for the comment author', 'wp-graphql' ),
 					],
 					'url'          => [
 						'type'        => 'String',
-						'description' => __( 'The url the comment author.', 'wp-graphql' ),
+						// 'description' => __( 'The url the comment author.', 'wp-graphql' ),
 					],
 					'isRestricted' => [
 						'type'        => 'Boolean',
-						'description' => __( 'Whether the object is restricted from the current viewer', 'wp-graphql' ),
+						// 'description' => __( 'Whether the object is restricted from the current viewer', 'wp-graphql' ),
 					],
 					'avatar'       => [
 						'args'    => [
 							'size'         => [
 								'type'         => 'Int',
-								'description'  => __( 'The size attribute of the avatar field can be used to fetch avatars of different sizes. The value corresponds to the dimension in pixels to fetch. The default is 96 pixels.', 'wp-graphql' ),
+								// 'description'  => __( 'The size attribute of the avatar field can be used to fetch avatars of different sizes. The value corresponds to the dimension in pixels to fetch. The default is 96 pixels.', 'wp-graphql' ),
 								'defaultValue' => 96,
 							],
 							'forceDefault' => [
 								'type'        => 'Boolean',
-								'description' => __( 'Whether to always show the default image, never the Gravatar. Default false', 'wp-graphql' ),
+								// 'description' => __( 'Whether to always show the default image, never the Gravatar. Default false', 'wp-graphql' ),
 							],
 							'rating'       => [
 								'type'        => 'AvatarRatingEnum',
-								'description' => __( 'The rating level of the avatar.', 'wp-graphql' ),
+								// 'description' => __( 'The rating level of the avatar.', 'wp-graphql' ),
 							],
 
 						],

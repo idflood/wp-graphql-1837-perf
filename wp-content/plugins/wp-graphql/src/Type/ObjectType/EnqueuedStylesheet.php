@@ -18,7 +18,7 @@ class EnqueuedStylesheet {
 	 */
 	public static function register_type() {
 		register_graphql_object_type( 'EnqueuedStylesheet', [
-			'description' => __( 'Stylesheet enqueued by the CMS', 'wp-graphql' ),
+			// 'description' => __( 'Stylesheet enqueued by the CMS', 'wp-graphql' ),
 			'interfaces'  => [ 'Node', 'EnqueuedAsset' ],
 			'fields'      => [
 				'id'      => [

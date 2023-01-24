@@ -14,11 +14,11 @@ class Node {
 		register_graphql_interface_type(
 			'Node',
 			[
-				'description' => __( 'An object with an ID', 'wp-graphql' ),
+				// 'description' => __( 'An object with an ID', 'wp-graphql' ),
 				'fields'      => [
 					'id' => [
 						'type'        => [ 'non_null' => 'ID' ],
-						'description' => __( 'The globally unique ID for the object', 'wp-graphql' ),
+						// 'description' => __( 'The globally unique ID for the object', 'wp-graphql' ),
 					],
 				],
 				'resolveType' => function ( $node ) {

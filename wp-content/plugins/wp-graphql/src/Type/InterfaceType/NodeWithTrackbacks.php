@@ -17,19 +17,19 @@ class NodeWithTrackbacks {
 			'NodeWithTrackbacks',
 			[
 				'interfaces'  => [ 'Node' ],
-				'description' => __( 'A node that can have trackbacks and pingbacks', 'wp-graphql' ),
+				// 'description' => __( 'A node that can have trackbacks and pingbacks', 'wp-graphql' ),
 				'fields'      => [
 					'toPing'     => [
 						'type'        => [ 'list_of' => 'String' ],
-						'description' => __( 'URLs queued to be pinged.', 'wp-graphql' ),
+						// 'description' => __( 'URLs queued to be pinged.', 'wp-graphql' ),
 					],
 					'pinged'     => [
 						'type'        => [ 'list_of' => 'String' ],
-						'description' => __( 'URLs that have been pinged.', 'wp-graphql' ),
+						// 'description' => __( 'URLs that have been pinged.', 'wp-graphql' ),
 					],
 					'pingStatus' => [
 						'type'        => 'String',
-						'description' => __( 'Whether the pings are open or closed for this particular post.', 'wp-graphql' ),
+						// 'description' => __( 'Whether the pings are open or closed for this particular post.', 'wp-graphql' ),
 					],
 				],
 			]

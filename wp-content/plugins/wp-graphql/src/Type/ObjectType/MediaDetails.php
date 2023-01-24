@@ -13,19 +13,19 @@ class MediaDetails {
 		register_graphql_object_type(
 			'MediaDetails',
 			[
-				'description' => __( 'File details for a Media Item', 'wp-graphql' ),
+				// 'description' => __( 'File details for a Media Item', 'wp-graphql' ),
 				'fields'      => [
 					'width'  => [
 						'type'        => 'Int',
-						'description' => __( 'The width of the mediaItem', 'wp-graphql' ),
+						// 'description' => __( 'The width of the mediaItem', 'wp-graphql' ),
 					],
 					'height' => [
 						'type'        => 'Int',
-						'description' => __( 'The height of the mediaItem', 'wp-graphql' ),
+						// 'description' => __( 'The height of the mediaItem', 'wp-graphql' ),
 					],
 					'file'   => [
 						'type'        => 'String',
-						'description' => __( 'The filename of the mediaItem', 'wp-graphql' ),
+						// 'description' => __( 'The filename of the mediaItem', 'wp-graphql' ),
 					],
 					'sizes'  => [
 						'type'        => [
@@ -34,14 +34,14 @@ class MediaDetails {
 						'args'        => [
 							'exclude' => [ // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 								'type'        => [ 'list_of' => 'MediaItemSizeEnum' ],
-								'description' => __( 'The sizes to exclude. Will take precedence over `include`.', 'wp-graphql' ),
+								// 'description' => __( 'The sizes to exclude. Will take precedence over `include`.', 'wp-graphql' ),
 							],
 							'include' => [
 								'type'        => [ 'list_of' => 'MediaItemSizeEnum' ],
-								'description' => __( 'The sizes to include. Can be overridden by `exclude`.', 'wp-graphql' ),
+								// 'description' => __( 'The sizes to include. Can be overridden by `exclude`.', 'wp-graphql' ),
 							],
 						],
-						'description' => __( 'The available sizes of the mediaItem', 'wp-graphql' ),
+						// 'description' => __( 'The available sizes of the mediaItem', 'wp-graphql' ),
 						'resolve'     => function ( $media_details, array $args ) {
 							// Bail early.
 							if ( empty( $media_details['sizes'] ) ) {
@@ -71,7 +71,7 @@ class MediaDetails {
 					],
 					'meta'   => [
 						'type'        => 'MediaItemMeta',
-						'description' => __( 'Meta information associated with the mediaItem', 'wp-graphql' ),
+						// 'description' => __( 'Meta information associated with the mediaItem', 'wp-graphql' ),
 						'resolve'     => function ( $media_details ) {
 							return ! empty( $media_details['image_meta'] ) ? $media_details['image_meta'] : null;
 						},

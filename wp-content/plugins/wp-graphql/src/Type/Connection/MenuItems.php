@@ -102,19 +102,19 @@ class MenuItems {
 				'connectionArgs' => [
 					'id'               => [
 						'type'        => 'Int',
-						'description' => __( 'The database ID of the object', 'wp-graphql' ),
+						// 'description' => __( 'The database ID of the object', 'wp-graphql' ),
 					],
 					'location'         => [
 						'type'        => 'MenuLocationEnum',
-						'description' => __( 'The menu location for the menu being queried', 'wp-graphql' ),
+						// 'description' => __( 'The menu location for the menu being queried', 'wp-graphql' ),
 					],
 					'parentId'         => [
 						'type'        => 'ID',
-						'description' => __( 'The ID of the parent menu object', 'wp-graphql' ),
+						// 'description' => __( 'The ID of the parent menu object', 'wp-graphql' ),
 					],
 					'parentDatabaseId' => [
 						'type'        => 'Int',
-						'description' => __( 'The database ID of the parent menu object', 'wp-graphql' ),
+						// 'description' => __( 'The database ID of the parent menu object', 'wp-graphql' ),
 					],
 				],
 				'resolve'        => function ( $source, $args, $context, $info ) {

@@ -18,7 +18,7 @@ class EnqueuedScript {
 	 */
 	public static function register_type() {
 		register_graphql_object_type( 'EnqueuedScript', [
-			'description' => __( 'Script enqueued by the CMS', 'wp-graphql' ),
+			// 'description' => __( 'Script enqueued by the CMS', 'wp-graphql' ),
 			'interfaces'  => [ 'Node', 'EnqueuedAsset' ],
 			'fields'      => [
 				'id'      => [

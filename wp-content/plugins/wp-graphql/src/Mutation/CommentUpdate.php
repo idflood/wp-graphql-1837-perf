@@ -46,7 +46,7 @@ class CommentUpdate {
 					'type'        => [
 						'non_null' => 'ID',
 					],
-					'description' => __( 'The ID of the comment being updated.', 'wp-graphql' ),
+					// 'description' => __( 'The ID of the comment being updated.', 'wp-graphql' ),
 				],
 			]
 		);

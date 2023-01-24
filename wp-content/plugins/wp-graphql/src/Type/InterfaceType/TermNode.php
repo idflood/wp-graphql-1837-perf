@@ -42,7 +42,7 @@ class TermNode {
 						},
 					],
 				],
-				'description' => __( 'Terms are nodes within a Taxonomy, used to group and relate other nodes.', 'wp-graphql' ),
+				// 'description' => __( 'Terms are nodes within a Taxonomy, used to group and relate other nodes.', 'wp-graphql' ),
 				'resolveType' => function ( $term ) use ( $type_registry ) {
 
 					/**
@@ -68,46 +68,46 @@ class TermNode {
 				'fields'      => [
 					'databaseId'     => [
 						'type'        => [ 'non_null' => 'Int' ],
-						'description' => __( 'Identifies the primary key from the database.', 'wp-graphql' ),
+						// 'description' => __( 'Identifies the primary key from the database.', 'wp-graphql' ),
 						'resolve'     => function ( Term $term, $args, $context, $info ) {
 							return absint( $term->term_id );
 						},
 					],
 					'count'          => [
 						'type'        => 'Int',
-						'description' => __( 'The number of objects connected to the object', 'wp-graphql' ),
+						// 'description' => __( 'The number of objects connected to the object', 'wp-graphql' ),
 					],
 					'description'    => [
 						'type'        => 'String',
-						'description' => __( 'The description of the object', 'wp-graphql' ),
+						// 'description' => __( 'The description of the object', 'wp-graphql' ),
 					],
 					'name'           => [
 						'type'        => 'String',
-						'description' => __( 'The human friendly name of the object.', 'wp-graphql' ),
+						// 'description' => __( 'The human friendly name of the object.', 'wp-graphql' ),
 					],
 					'slug'           => [
 						'type'        => 'String',
-						'description' => __( 'An alphanumeric identifier for the object unique to its type.', 'wp-graphql' ),
+						// 'description' => __( 'An alphanumeric identifier for the object unique to its type.', 'wp-graphql' ),
 					],
 					'termGroupId'    => [
 						'type'        => 'Int',
-						'description' => __( 'The ID of the term group that this term object belongs to', 'wp-graphql' ),
+						// 'description' => __( 'The ID of the term group that this term object belongs to', 'wp-graphql' ),
 					],
 					'termTaxonomyId' => [
 						'type'        => 'Int',
-						'description' => __( 'The taxonomy ID that the object is associated with', 'wp-graphql' ),
+						// 'description' => __( 'The taxonomy ID that the object is associated with', 'wp-graphql' ),
 					],
 					'taxonomyName'   => [
 						'type'        => 'String',
-						'description' => __( 'The name of the taxonomy that the object is associated with', 'wp-graphql' ),
+						// 'description' => __( 'The name of the taxonomy that the object is associated with', 'wp-graphql' ),
 					],
 					'isRestricted'   => [
 						'type'        => 'Boolean',
-						'description' => __( 'Whether the object is restricted from the current viewer', 'wp-graphql' ),
+						// 'description' => __( 'Whether the object is restricted from the current viewer', 'wp-graphql' ),
 					],
 					'link'           => [
 						'type'        => 'String',
-						'description' => __( 'The link to the term', 'wp-graphql' ),
+						// 'description' => __( 'The link to the term', 'wp-graphql' ),
 					],
 				],
 			]

@@ -13,34 +13,34 @@ class MediaSize {
 		register_graphql_object_type(
 			'MediaSize',
 			[
-				'description' => __( 'Details of an available size for a media item', 'wp-graphql' ),
+				// 'description' => __( 'Details of an available size for a media item', 'wp-graphql' ),
 				'fields'      => [
 					'name'      => [
 						'type'        => 'String',
-						'description' => __( 'The referenced size name', 'wp-graphql' ),
+						// 'description' => __( 'The referenced size name', 'wp-graphql' ),
 					],
 					'file'      => [
 						'type'        => 'String',
-						'description' => __( 'The filename of the referenced size', 'wp-graphql' ),
+						// 'description' => __( 'The filename of the referenced size', 'wp-graphql' ),
 					],
 					'width'     => [
 						'type'        => 'String',
-						'description' => __( 'The width of the referenced size', 'wp-graphql' ),
+						// 'description' => __( 'The width of the referenced size', 'wp-graphql' ),
 					],
 					'height'    => [
 						'type'        => 'String',
-						'description' => __( 'The height of the referenced size', 'wp-graphql' ),
+						// 'description' => __( 'The height of the referenced size', 'wp-graphql' ),
 					],
 					'mimeType'  => [
 						'type'        => 'String',
-						'description' => __( 'The mime type of the referenced size', 'wp-graphql' ),
+						// 'description' => __( 'The mime type of the referenced size', 'wp-graphql' ),
 						'resolve'     => function ( $image, $args, $context, $info ) {
 							return ! empty( $image['mime-type'] ) ? $image['mime-type'] : null;
 						},
 					],
 					'fileSize'  => [
 						'type'        => 'Int',
-						'description' => __( 'The filesize of the resource', 'wp-graphql' ),
+						// 'description' => __( 'The filesize of the resource', 'wp-graphql' ),
 						'resolve'     => function ( $image, $args, $context, $info ) {
 
 							$src_url = null;
@@ -57,7 +57,7 @@ class MediaSize {
 					],
 					'sourceUrl' => [
 						'type'        => 'String',
-						'description' => __( 'The url of the referenced size', 'wp-graphql' ),
+						// 'description' => __( 'The url of the referenced size', 'wp-graphql' ),
 						'resolve'     => function ( $image, $args, $context, $info ) {
 
 							$src_url = null;

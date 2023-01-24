@@ -14,7 +14,7 @@ class ContentNodeIdTypeEnum {
 		register_graphql_enum_type(
 			'ContentNodeIdTypeEnum',
 			[
-				'description' => __( 'The Type of Identifier used to fetch a single resource. Default is ID.', 'wp-graphql' ),
+				// 'description' => __( 'The Type of Identifier used to fetch a single resource. Default is ID.', 'wp-graphql' ),
 				'values'      => self::get_values(),
 			]
 		);
@@ -29,7 +29,7 @@ class ContentNodeIdTypeEnum {
 				$values['SLUG'] = [
 					'name'        => 'SLUG',
 					'value'       => 'slug',
-					'description' => __( 'Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier.', 'wp-graphql' ),
+					// 'description' => __( 'Identify a resource by the slug. Available to non-hierarchcial Types where the slug is a unique identifier.', 'wp-graphql' ),
 				];
 			}
 
@@ -37,7 +37,7 @@ class ContentNodeIdTypeEnum {
 				$values['SOURCE_URL'] = [
 					'name'        => 'SOURCE_URL',
 					'value'       => 'source_url',
-					'description' => __( 'Identify a media item by its source url', 'wp-graphql' ),
+					// 'description' => __( 'Identify a media item by its source url', 'wp-graphql' ),
 				];
 			}
 
@@ -48,7 +48,7 @@ class ContentNodeIdTypeEnum {
 			register_graphql_enum_type(
 				$post_type_object->graphql_single_name . 'IdType',
 				[
-					'description' => __( 'The Type of Identifier used to fetch a single resource. Default is ID.', 'wp-graphql' ),
+					// 'description' => __( 'The Type of Identifier used to fetch a single resource. Default is ID.', 'wp-graphql' ),
 					'values'      => $values,
 				]
 			);
@@ -65,17 +65,17 @@ class ContentNodeIdTypeEnum {
 			'ID'          => [
 				'name'        => 'ID',
 				'value'       => 'global_id',
-				'description' => __( 'Identify a resource by the (hashed) Global ID.', 'wp-graphql' ),
+				// 'description' => __( 'Identify a resource by the (hashed) Global ID.', 'wp-graphql' ),
 			],
 			'DATABASE_ID' => [
 				'name'        => 'DATABASE_ID',
 				'value'       => 'database_id',
-				'description' => __( 'Identify a resource by the Database ID.', 'wp-graphql' ),
+				// 'description' => __( 'Identify a resource by the Database ID.', 'wp-graphql' ),
 			],
 			'URI'         => [
 				'name'        => 'URI',
 				'value'       => 'uri',
-				'description' => __( 'Identify a resource by the URI.', 'wp-graphql' ),
+				// 'description' => __( 'Identify a resource by the URI.', 'wp-graphql' ),
 			],
 		];
 	}

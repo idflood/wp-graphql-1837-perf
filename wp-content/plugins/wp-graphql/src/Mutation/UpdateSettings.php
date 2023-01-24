@@ -123,7 +123,7 @@ class UpdateSettings {
 		 */
 		$output_fields['allSettings'] = [
 			'type'        => 'Settings',
-			'description' => __( 'Update all settings.', 'wp-graphql' ),
+			// 'description' => __( 'Update all settings.', 'wp-graphql' ),
 			'resolve'     => function () {
 				return true;
 			},
@@ -137,7 +137,7 @@ class UpdateSettings {
 
 				$output_fields[ Utils::format_field_name( $setting_type_name ) ] = [
 					'type'        => $setting_type_name,
-					'description' => sprintf( __( 'Update the %s setting.', 'wp-graphql' ), $setting_type_name ),
+					// 'description' => sprintf( __( 'Update the %s setting.', 'wp-graphql' ), $setting_type_name ),
 					'resolve'     => function () use ( $setting_type_name ) {
 						return $setting_type_name;
 					},

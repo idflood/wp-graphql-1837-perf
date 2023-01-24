@@ -17,11 +17,11 @@ class NodeWithRevisions {
 			'NodeWithRevisions',
 			[
 				'interfaces'  => [ 'Node' ],
-				'description' => __( 'A node that can have revisions', 'wp-graphql' ),
+				// 'description' => __( 'A node that can have revisions', 'wp-graphql' ),
 				'fields'      => [
 					'isRevision' => [
 						'type'        => 'Boolean',
-						'description' => __( 'True if the node is a revision of another node', 'wp-graphql' ),
+						// 'description' => __( 'True if the node is a revision of another node', 'wp-graphql' ),
 					],
 				],
 			]

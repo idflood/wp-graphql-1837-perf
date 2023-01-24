@@ -32,15 +32,15 @@ class ResetUserPassword {
 		return [
 			'key'      => [
 				'type'        => 'String',
-				'description' => __( 'Password reset key', 'wp-graphql' ),
+				// 'description' => __( 'Password reset key', 'wp-graphql' ),
 			],
 			'login'    => [
 				'type'        => 'String',
-				'description' => __( 'The user\'s login (username).', 'wp-graphql' ),
+				// 'description' => __( 'The user\'s login (username).', 'wp-graphql' ),
 			],
 			'password' => [
 				'type'        => 'String',
-				'description' => __( 'The new password.', 'wp-graphql' ),
+				// 'description' => __( 'The new password.', 'wp-graphql' ),
 			],
 		];
 	}

@@ -22,15 +22,15 @@ class NodeWithTitle {
 			'NodeWithTitle',
 			[
 				'interfaces'  => [ 'Node' ],
-				'description' => __( 'A node that NodeWith a title', 'wp-graphql' ),
+				// 'description' => __( 'A node that NodeWith a title', 'wp-graphql' ),
 				'fields'      => [
 					'title' => [
 						'type'        => 'String',
-						'description' => __( 'The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.', 'wp-graphql' ),
+						// 'description' => __( 'The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.', 'wp-graphql' ),
 						'args'        => [
 							'format' => [
 								'type'        => 'PostObjectFieldFormatEnum',
-								'description' => __( 'Format of the field output', 'wp-graphql' ),
+								// 'description' => __( 'Format of the field output', 'wp-graphql' ),
 							],
 						],
 						'resolve'     => function ( $source, $args ) {

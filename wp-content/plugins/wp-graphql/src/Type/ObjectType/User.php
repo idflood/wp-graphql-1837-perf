@@ -26,7 +26,7 @@ class User {
 		register_graphql_object_type(
 			'User',
 			[
-				'description' => __( 'A User object', 'wp-graphql' ),
+				// 'description' => __( 'A User object', 'wp-graphql' ),
 				'model'       => UserModel::class,
 				'interfaces'  => [ 'Node', 'UniformResourceIdentifiable', 'Commenter', 'DatabaseIdentifier' ],
 				'connections' => [
@@ -50,7 +50,7 @@ class User {
 						'toType'             => 'ContentNode',
 						'connectionTypeName' => 'UserToRevisionsConnection',
 						'queryClass'         => 'WP_Query',
-						'description'        => __( 'Connection between the User and Revisions authored by the user', 'wp-graphql' ),
+						// 'description'        => __( 'Connection between the User and Revisions authored by the user', 'wp-graphql' ),
 						'connectionArgs'     => PostObjects::get_connection_args(),
 						'resolve'            => function ( $root, $args, $context, $info ) {
 							$resolver = new PostObjectConnectionResolver( $root, $args, $context, $info, 'revision' );
@@ -75,11 +75,11 @@ class User {
 				],
 				'fields'      => [
 					'id'                => [
-						'description' => __( 'The globally unique identifier for the user object.', 'wp-graphql' ),
+						// 'description' => __( 'The globally unique identifier for the user object.', 'wp-graphql' ),
 					],
 					'databaseId'        => [
 						'type'        => [ 'non_null' => 'Int' ],
-						'description' => __( 'Identifies the primary key from the database.', 'wp-graphql' ),
+						// 'description' => __( 'Identifies the primary key from the database.', 'wp-graphql' ),
 						'resolve'     => function ( \WPGraphQL\Model\User $user ) {
 							return absint( $user->userId );
 						},
@@ -88,65 +88,65 @@ class User {
 						'type'        => [
 							'list_of' => 'String',
 						],
-						'description' => __( 'A list of capabilities (permissions) granted to the user', 'wp-graphql' ),
+						// 'description' => __( 'A list of capabilities (permissions) granted to the user', 'wp-graphql' ),
 					],
 					'capKey'            => [
 						'type'        => 'String',
-						'description' => __( 'User metadata option name. Usually it will be "wp_capabilities".', 'wp-graphql' ),
+						// 'description' => __( 'User metadata option name. Usually it will be "wp_capabilities".', 'wp-graphql' ),
 					],
 					'email'             => [
 						'type'        => 'String',
-						'description' => __( 'Email address of the user. This is equivalent to the WP_User->user_email property.', 'wp-graphql' ),
+						// 'description' => __( 'Email address of the user. This is equivalent to the WP_User->user_email property.', 'wp-graphql' ),
 					],
 					'firstName'         => [
 						'type'        => 'String',
-						'description' => __( 'First name of the user. This is equivalent to the WP_User->user_first_name property.', 'wp-graphql' ),
+						// 'description' => __( 'First name of the user. This is equivalent to the WP_User->user_first_name property.', 'wp-graphql' ),
 					],
 					'lastName'          => [
 						'type'        => 'String',
-						'description' => __( 'Last name of the user. This is equivalent to the WP_User->user_last_name property.', 'wp-graphql' ),
+						// 'description' => __( 'Last name of the user. This is equivalent to the WP_User->user_last_name property.', 'wp-graphql' ),
 					],
 					'extraCapabilities' => [
 						'type'        => [
 							'list_of' => 'String',
 						],
-						'description' => __( 'A complete list of capabilities including capabilities inherited from a role. This is equivalent to the array keys of WP_User->allcaps.', 'wp-graphql' ),
+						// 'description' => __( 'A complete list of capabilities including capabilities inherited from a role. This is equivalent to the array keys of WP_User->allcaps.', 'wp-graphql' ),
 					],
 					'description'       => [
 						'type'        => 'String',
-						'description' => __( 'Description of the user.', 'wp-graphql' ),
+						// 'description' => __( 'Description of the user.', 'wp-graphql' ),
 					],
 					'username'          => [
 						'type'        => 'String',
-						'description' => __( 'Username for the user. This field is equivalent to WP_User->user_login.', 'wp-graphql' ),
+						// 'description' => __( 'Username for the user. This field is equivalent to WP_User->user_login.', 'wp-graphql' ),
 					],
 					'name'              => [
 						'type'        => 'String',
-						'description' => __( 'Display name of the user. This is equivalent to the WP_User->dispaly_name property.', 'wp-graphql' ),
+						// 'description' => __( 'Display name of the user. This is equivalent to the WP_User->dispaly_name property.', 'wp-graphql' ),
 					],
 					'registeredDate'    => [
 						'type'        => 'String',
-						'description' => __( 'The date the user registered or was created. The field follows a full ISO8601 date string format.', 'wp-graphql' ),
+						// 'description' => __( 'The date the user registered or was created. The field follows a full ISO8601 date string format.', 'wp-graphql' ),
 					],
 					'nickname'          => [
 						'type'        => 'String',
-						'description' => __( 'Nickname of the user.', 'wp-graphql' ),
+						// 'description' => __( 'Nickname of the user.', 'wp-graphql' ),
 					],
 					'url'               => [
 						'type'        => 'String',
-						'description' => __( 'A website url that is associated with the user.', 'wp-graphql' ),
+						// 'description' => __( 'A website url that is associated with the user.', 'wp-graphql' ),
 					],
 					'slug'              => [
 						'type'        => 'String',
-						'description' => __( 'The slug for the user. This field is equivalent to WP_User->user_nicename', 'wp-graphql' ),
+						// 'description' => __( 'The slug for the user. This field is equivalent to WP_User->user_nicename', 'wp-graphql' ),
 					],
 					'nicename'          => [
 						'type'        => 'String',
-						'description' => __( 'The nicename for the user. This field is equivalent to WP_User->user_nicename', 'wp-graphql' ),
+						// 'description' => __( 'The nicename for the user. This field is equivalent to WP_User->user_nicename', 'wp-graphql' ),
 					],
 					'locale'            => [
 						'type'        => 'String',
-						'description' => __( 'The preferred language locale set for the user. Value derived from get_user_locale().', 'wp-graphql' ),
+						// 'description' => __( 'The preferred language locale set for the user. Value derived from get_user_locale().', 'wp-graphql' ),
 					],
 					'userId'            => [
 						'type'              => 'Int',
@@ -155,22 +155,22 @@ class User {
 					],
 					'isRestricted'      => [
 						'type'        => 'Boolean',
-						'description' => __( 'Whether the object is restricted from the current viewer', 'wp-graphql' ),
+						// 'description' => __( 'Whether the object is restricted from the current viewer', 'wp-graphql' ),
 					],
 					'avatar'            => [
 						'args'    => [
 							'size'         => [
 								'type'         => 'Int',
-								'description'  => __( 'The size attribute of the avatar field can be used to fetch avatars of different sizes. The value corresponds to the dimension in pixels to fetch. The default is 96 pixels.', 'wp-graphql' ),
+								// 'description'  => __( 'The size attribute of the avatar field can be used to fetch avatars of different sizes. The value corresponds to the dimension in pixels to fetch. The default is 96 pixels.', 'wp-graphql' ),
 								'defaultValue' => 96,
 							],
 							'forceDefault' => [
 								'type'        => 'Boolean',
-								'description' => __( 'Whether to always show the default image, never the Gravatar. Default false', 'wp-graphql' ),
+								// 'description' => __( 'Whether to always show the default image, never the Gravatar. Default false', 'wp-graphql' ),
 							],
 							'rating'       => [
 								'type'        => 'AvatarRatingEnum',
-								'description' => __( 'The rating level of the avatar.', 'wp-graphql' ),
+								// 'description' => __( 'The rating level of the avatar.', 'wp-graphql' ),
 							],
 
 						],

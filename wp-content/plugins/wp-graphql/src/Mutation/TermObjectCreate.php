@@ -30,7 +30,7 @@ class TermObjectCreate {
 								'non_null' => 'String',
 							],
 							// Translators: The placeholder is the name of the taxonomy for the object being mutated
-							'description' => sprintf( __( 'The name of the %1$s object to mutate', 'wp-graphql' ), $taxonomy->name ),
+							// 'description' => sprintf( __( 'The name of the %1$s object to mutate', 'wp-graphql' ), $taxonomy->name ),
 						],
 					]
 				),
@@ -52,16 +52,16 @@ class TermObjectCreate {
 			'aliasOf'     => [
 				'type'        => 'String',
 				// Translators: The placeholder is the name of the taxonomy for the object being mutated
-				'description' => sprintf( __( 'The slug that the %1$s will be an alias of', 'wp-graphql' ), $taxonomy->name ),
+				// 'description' => sprintf( __( 'The slug that the %1$s will be an alias of', 'wp-graphql' ), $taxonomy->name ),
 			],
 			'description' => [
 				'type'        => 'String',
 				// Translators: The placeholder is the name of the taxonomy for the object being mutated
-				'description' => sprintf( __( 'The description of the %1$s object', 'wp-graphql' ), $taxonomy->name ),
+				// 'description' => sprintf( __( 'The description of the %1$s object', 'wp-graphql' ), $taxonomy->name ),
 			],
 			'slug'        => [
 				'type'        => 'String',
-				'description' => __( 'If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name.', 'wp-graphql' ),
+				// 'description' => __( 'If this argument exists then the slug will be checked to see if it is not an existing valid term. If that check succeeds (it is not a valid term), then it is added and the term id is given. If it fails, then a check is made to whether the taxonomy is hierarchical and the parent argument is not empty. If the second check succeeds, the term will be inserted and the term id will be given. If the slug argument is empty, then it will be calculated from the term name.', 'wp-graphql' ),
 			],
 		];
 
@@ -72,7 +72,7 @@ class TermObjectCreate {
 			$fields['parentId'] = [
 				'type'        => 'ID',
 				// Translators: The placeholder is the name of the taxonomy for the object being mutated
-				'description' => sprintf( __( 'The ID of the %1$s that should be set as the parent', 'wp-graphql' ), $taxonomy->name ),
+				// 'description' => sprintf( __( 'The ID of the %1$s that should be set as the parent', 'wp-graphql' ), $taxonomy->name ),
 			];
 		}
 
@@ -91,7 +91,7 @@ class TermObjectCreate {
 			$taxonomy->graphql_single_name => [
 				'type'        => $taxonomy->graphql_single_name,
 				// translators: Placeholder is the name of the taxonomy
-				'description' => sprintf( __( 'The created %s', 'wp-graphql' ), $taxonomy->name ),
+				// 'description' => sprintf( __( 'The created %s', 'wp-graphql' ), $taxonomy->name ),
 				'resolve'     => function ( $payload, $args, AppContext $context, ResolveInfo $info ) {
 					$id = isset( $payload['termId'] ) ? absint( $payload['termId'] ) : null;
 

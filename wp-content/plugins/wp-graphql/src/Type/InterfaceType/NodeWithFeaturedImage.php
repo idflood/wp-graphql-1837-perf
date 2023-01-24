@@ -23,7 +23,7 @@ class NodeWithFeaturedImage {
 		register_graphql_interface_type(
 			'NodeWithFeaturedImage',
 			[
-				'description' => __( 'A node that can have a featured image set', 'wp-graphql' ),
+				// 'description' => __( 'A node that can have a featured image set', 'wp-graphql' ),
 				'interfaces'  => [ 'Node' ],
 				'connections' => [
 					'featuredImage' => [
@@ -46,11 +46,11 @@ class NodeWithFeaturedImage {
 				'fields'      => [
 					'featuredImageId'         => [
 						'type'        => 'ID',
-						'description' => __( 'Globally unique ID of the featured image assigned to the node', 'wp-graphql' ),
+						// 'description' => __( 'Globally unique ID of the featured image assigned to the node', 'wp-graphql' ),
 					],
 					'featuredImageDatabaseId' => [
 						'type'        => 'Int',
-						'description' => __( 'The database identifier for the featured image node assigned to the content node', 'wp-graphql' ),
+						// 'description' => __( 'The database identifier for the featured image node assigned to the content node', 'wp-graphql' ),
 					],
 				],
 			]

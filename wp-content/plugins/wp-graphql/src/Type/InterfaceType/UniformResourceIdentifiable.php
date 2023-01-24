@@ -23,26 +23,26 @@ class UniformResourceIdentifiable {
 			'UniformResourceIdentifiable',
 			[
 				'interfaces'  => [ 'Node' ],
-				'description' => __( 'Any node that has a URI', 'wp-graphql' ),
+				// 'description' => __( 'Any node that has a URI', 'wp-graphql' ),
 				'fields'      => [
 					'uri'           => [
 						'type'        => 'String',
-						'description' => __( 'The unique resource identifier path', 'wp-graphql' ),
+						// 'description' => __( 'The unique resource identifier path', 'wp-graphql' ),
 					],
 					'id'            => [
 						'type'        => [ 'non_null' => 'ID' ],
-						'description' => __( 'The unique resource identifier path', 'wp-graphql' ),
+						// 'description' => __( 'The unique resource identifier path', 'wp-graphql' ),
 					],
 					'isContentNode' => [
 						'type'        => [ 'non_null' => 'Boolean' ],
-						'description' => __( 'Whether the node is a Content Node', 'wp-graphql' ),
+						// 'description' => __( 'Whether the node is a Content Node', 'wp-graphql' ),
 						'resolve'     => function ( $node ) {
 							return $node instanceof Post;
 						},
 					],
 					'isTermNode'    => [
 						'type'        => [ 'non_null' => 'Boolean' ],
-						'description' => __( 'Whether the node is a Term', 'wp-graphql' ),
+						// 'description' => __( 'Whether the node is a Term', 'wp-graphql' ),
 						'resolve'     => function ( $node ) {
 							return $node instanceof Term;
 						},

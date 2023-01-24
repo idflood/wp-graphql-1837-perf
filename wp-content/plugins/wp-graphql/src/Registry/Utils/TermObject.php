@@ -141,10 +141,10 @@ class TermObject {
 			// Parent.
 			$connections['parent'] = [
 				'toType'             => $tax_object->graphql_single_name,
-				'description'        => sprintf(
-					__( 'Connection between the %1$s type and its parent %1$s.', 'wp-graphql' ),
-					$tax_object->graphql_single_name
-				),
+				// 'description'        => sprintf(
+				// 	__( 'Connection between the %1$s type and its parent %1$s.', 'wp-graphql' ),
+				// 	$tax_object->graphql_single_name
+				// ),
 				'connectionTypeName' => ucfirst( $tax_object->graphql_single_name ) . 'ToParent' . ucfirst( $tax_object->graphql_single_name ) . 'Connection',
 				'oneToOne'           => true,
 				'resolve'            => function ( Term $term, $args, AppContext $context, $info ) use ( $tax_object ) {
@@ -162,7 +162,7 @@ class TermObject {
 			// Ancestors.
 			$connections['ancestors'] = [
 				'toType'             => $tax_object->graphql_single_name,
-				'description'        => __( 'The ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).', 'wp-graphql' ),
+				// 'description'        => __( 'The ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).', 'wp-graphql' ),
 				'connectionTypeName' => ucfirst( $tax_object->graphql_single_name ) . 'ToAncestors' . ucfirst( $tax_object->graphql_single_name ) . 'Connection',
 				'resolve'            => function ( Term $term, $args, AppContext $context, $info ) use ( $tax_object ) {
 					if ( ! $tax_object instanceof WP_Taxonomy ) {
@@ -298,8 +298,8 @@ class TermObject {
 		$fields      = [
 			$single_name . 'Id' => [
 				'type'              => 'Int',
-				'deprecationReason' => __( 'Deprecated in favor of databaseId', 'wp-graphql' ),
-				'description'       => __( 'The id field matches the WP_Post->ID field.', 'wp-graphql' ),
+				// 'deprecationReason' => __( 'Deprecated in favor of databaseId', 'wp-graphql' ),
+				// 'description'       => __( 'The id field matches the WP_Post->ID field.', 'wp-graphql' ),
 				'resolve'           => function ( Term $term, $args, $context, $info ) {
 					return absint( $term->term_id );
 				},

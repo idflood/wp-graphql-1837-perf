@@ -22,7 +22,7 @@ class CommentStatusEnum {
 		foreach ( $stati as $status => $name ) {
 
 			$values[ WPEnumType::get_safe_name( $status ) ] = [
-				'description' => sprintf( __( 'Comments with the %1$s status', 'wp-graphql' ), $name ),
+				// 'description' => sprintf( __( 'Comments with the %1$s status', 'wp-graphql' ), $name ),
 				'value'       => $status,
 			];
 		}
@@ -30,7 +30,7 @@ class CommentStatusEnum {
 		register_graphql_enum_type(
 			'CommentStatusEnum',
 			[
-				'description' => __( 'The status of the comment object.', 'wp-graphql' ),
+				// 'description' => __( 'The status of the comment object.', 'wp-graphql' ),
 				'values'      => $values,
 			]
 		);

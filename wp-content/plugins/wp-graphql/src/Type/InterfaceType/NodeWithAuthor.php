@@ -20,15 +20,15 @@ class NodeWithAuthor {
 			'NodeWithAuthor',
 			[
 				'interfaces'  => [ 'Node' ],
-				'description' => __( 'A node that can have an author assigned to it', 'wp-graphql' ),
+				// 'description' => __( 'A node that can have an author assigned to it', 'wp-graphql' ),
 				'fields'      => [
 					'authorId'         => [
 						'type'        => 'ID',
-						'description' => __( 'The globally unique identifier of the author of the node', 'wp-graphql' ),
+						// 'description' => __( 'The globally unique identifier of the author of the node', 'wp-graphql' ),
 					],
 					'authorDatabaseId' => [
 						'type'        => 'Int',
-						'description' => __( 'The database identifier of the author of the node', 'wp-graphql' ),
+						// 'description' => __( 'The database identifier of the author of the node', 'wp-graphql' ),
 					],
 				],
 			]

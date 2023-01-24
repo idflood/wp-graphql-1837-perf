@@ -23,7 +23,7 @@ class UserRoleEnum {
 				$formatted_role = WPEnumType::get_safe_name( isset( $role['name'] ) ? $role['name'] : $key );
 
 				$roles[ $formatted_role ] = [
-					'description' => __( 'User role with specific capabilities', 'wp-graphql' ),
+					// 'description' => __( 'User role with specific capabilities', 'wp-graphql' ),
 					'value'       => $key,
 				];
 			}
@@ -33,7 +33,7 @@ class UserRoleEnum {
 			register_graphql_enum_type(
 				'UserRoleEnum',
 				[
-					'description' => __( 'Names of available user roles', 'wp-graphql' ),
+					// 'description' => __( 'Names of available user roles', 'wp-graphql' ),
 					'values'      => $roles,
 				]
 			);

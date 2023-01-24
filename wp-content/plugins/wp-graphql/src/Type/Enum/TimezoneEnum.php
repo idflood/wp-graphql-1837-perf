@@ -43,7 +43,7 @@ class TimezoneEnum {
 			load_textdomain( 'continents-cities', $mofile );
 			$mo_loaded = true;
 		}
-	
+
 		$zonen = [];
 		foreach ( timezone_identifiers_list() as $zone ) {
 			$zone = explode( '/', $zone );
@@ -182,7 +182,7 @@ class TimezoneEnum {
 			// Intentionally avoid WPEnumType::get_safe_name here for specific timezone formatting
 			$enum_values[ WPEnumType::get_safe_name( $offset_name ) ] = [
 				'value'       => $offset_value,
-				'description' => sprintf( __( 'UTC offset: %s', 'wp-graphql' ), $offset_name ),
+				// 'description' => sprintf( __( 'UTC offset: %s', 'wp-graphql' ), $offset_name ),
 			];
 
 		}
@@ -190,7 +190,7 @@ class TimezoneEnum {
 		register_graphql_enum_type(
 			'TimezoneEnum',
 			[
-				'description' => __( 'Available timezones', 'wp-graphql' ),
+				// 'description' => __( 'Available timezones', 'wp-graphql' ),
 				'values'      => $enum_values,
 			]
 		);

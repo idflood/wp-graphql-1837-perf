@@ -32,7 +32,7 @@ class Settings {
 		register_graphql_object_type(
 			'Settings',
 			[
-				'description' => __( 'All of the registered settings', 'wp-graphql' ),
+				// 'description' => __( 'All of the registered settings', 'wp-graphql' ),
 				'fields'      => $fields,
 			]
 		);
@@ -91,7 +91,7 @@ class Settings {
 					 */
 					$fields[ $field_key ] = [
 						'type'        => $setting_field['type'],
-						'description' => sprintf( __( 'Settings of the the %s Settings Group', 'wp-graphql' ), $setting_field['type'] ),
+						// 'description' => sprintf( __( 'Settings of the the %s Settings Group', 'wp-graphql' ), $setting_field['type'] ),
 						'resolve'     => function ( $root, $args, $context, $info ) use ( $setting_field, $key ) {
 							/**
 							 * Check to see if the user querying the email field has the 'manage_options' capability
